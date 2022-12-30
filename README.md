@@ -1,6 +1,8 @@
 # dias-sem-demissoes
 Um serviço público.
 
+[🌐 Disponível online aqui](https://giloliveira.github.io/dias-sem-demissoes)
+
 Este site permite aos cidadãos de Portugal terem conhecimento de quanto tempo passou desde que alguém no Governo se demitiu.
 
 Como têm sido 
