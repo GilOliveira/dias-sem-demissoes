@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dias sem demissões</title>
+    <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.classless.min.css">
+    <style>
+
+        h5 {
+            margin-bottom: 0;
+        }
+
+        .mainDiv {
+            display: grid;
+            place-items: center;
+            margin-bottom: 2em;
+            text-align: center;
+        }
+
+        .counter {
+            font-weight: bold;
+            font-family: monospace;
+            font-size: 8em;
+            background-color: black;
+        }
+    </style>
+
+</head>
+<body>
+
+    <main>
+        <div class="mainDiv">
+            <p>
+                Estamos há<br>
+                <span id="counterTens" class="counter"></span>
+                <span id="counterUnit" class="counter"></span><br>
+                <span id="daysStr"></span> sem demissões no governo
+            </p>
+        </div>
+
+        <br>
+
+        <p>
+            O governo tomou posse há <span id="daysOfGov"></span> dias.<br>
+            Já sairam <span id="peopleExited"></span> elementos.<br>
+        </p>
+
+
+        <br>
+
+        <div>
+            <h5>Últimas demissões:</h5>
+            <table id="peopleTable">
+                <tr>
+                    <th>Membro(a)</th>
+                    <th>Cargo</th>
+                    <th>Demissão</th>
+                </tr>
+                <tr>
+                    <td>Pedro Nuno Santos</td>
+                    <td>Ministro das Infraestruturas</td>
+                    <td>28 de dezembro de 2022</td>
+                </tr>
+                <tr>
+                    <td>Hugo Mendes</td>
+                    <td>Secretário de Estado das Infraestruturas</td>
+                    <td>28 de dezembro de 2022</td>
+                </tr>
+                <tr>
+                    <td>Alexandra Reis</td>
+                    <td>Secretária de Estado do Tesouro</td>
+                    <td>27 de dezembro de 2022</td>
+                </tr>
+                <tr>
+                    <td>Rita Marques</td>
+                    <td>Secretária de Estado do Turismo, Comércio e Indústria</td>
+                    <td>29 de novembro de 2022</td>
+                </tr>
+                <tr>
+                    <td>João Neves</td>
+                    <td>Secretário de Estado da Economia</td>
+                    <td>29 de novembro de 2022</td>
+                </tr>
+                <tr>
+                    <td>Miguel Alves</td>
+                    <td>Secretário de Estado Adjunto do Primeiro-Ministro</td>
+                    <td>16 de setembro de 2022</td>
+                </tr>
+                <tr>
+                    <td>Fátima Fonseca</td>
+                    <td>Secretária de Estado Adjunta e da Saúde</td>
+                    <td>30 de agosto de 2022</td>
+                </tr>
+                <tr>
+                    <td>António Lacerda Sales</td>
+                    <td>Secretário de Estado Adjunta e da Saúde</td>
+                    <td>30 de agosto de 2022</td>
+                </tr>
+                <tr>
+                    <td>Marta Temido</td>
+                    <td>Ministra da Saúde</td>
+                    <td>30 de agosto de 2022</td>
+                </tr>
+                <tr>
+                    <td>Sérgio Figueiredo</td>
+                    <td>Consultor do Ministro das Finanças</td>
+                    <td>16 de maio de 2022</td>
+                </tr>
+                <tr>
+                    <td>Sara Abrantes Guerreiro</td>
+                    <td>Secretária de Estado da Igualdade e das Migrações</td>
+                    <td>2 de maio de 2022</td>
+                </tr>
+            </table>
+        </div>
+    </main>
+
+    <script>
+        const lastResignation = new Date("2022-12-28");
+        const govStart = new Date("2022-03-30");
+        const currentTime = new Date();
+
+        const daysOfGov = document.getElementById('daysOfGov');
+        const daysStr = document.getElementById('daysStr');
+        const counterUnit = document.getElementById('counterUnit');
+        const counterTens = document.getElementById('counterTens');
+        const peopleExited = document.getElementById('peopleExited');
+
+        const daysElapsed = Math.round(Math.floor((currentTime - lastResignation)/8.64e7));
+        const govTime = Math.round(Math.floor((currentTime - govStart)/8.64e7));
+
+        const totalPeople = document.getElementById("peopleTable").rows.length - 1;
+
+        if (daysElapsed === 1){
+            console.log('here');
+            daysStr.innerText = "dia";
+        } else {
+            daysStr.innerText = "dias";
+        }
+
+        const daysElapsedUnit = daysElapsed % 10;
+        const daysElapsedTens = Math.floor(daysElapsed / 10);
+
+        daysOfGov.innerText = govTime.toString();
+        counterUnit.innerText = daysElapsedUnit.toString();
+        counterTens.innerText = daysElapsedTens.toString();
+        peopleExited.innerText = totalPeople.toString();
+    </script>
+</body>
+<footer>
+    <hr>
+    © 2022 <a href="https://gil.omg.lol">Gil</a>. Todos os direitos reservados. <br>
+    O gestor deste sítio web não procede à recolha de dados pessoais.
+</footer>
+</html>
