@@ -1,14 +1,11 @@
 <!DOCTYPE html>
-<!-- SPDX-License-Identifier: MIT -->
-<!-- dias-sem-demissoes // © 2022 Gil Oliveira -->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dias sem demissões</title>
-    <link rel="stylesheet" href="css/pico.classless.min.css">
-    <link rel="icon" href="favicon.svg" />
+    <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.classless.min.css">
     <style>
 
         h5 {
@@ -61,6 +58,11 @@
                     <th>Cargo</th>
                     <th>Demissão</th>
                 </tr>
+				<tr>
+				    <td>Carla Alves</td>
+					<td>Secretária de Estado da Agricultura</td>
+					<td>5 de janeiro de 2023</rd>
+				</tr>
                 <tr>
                     <td>Pedro Nuno Santos</td>
                     <td>Ministro das Infraestruturas</td>
@@ -121,7 +123,7 @@
     </main>
 
     <script>
-        const lastResignation = new Date("2022-12-28");
+        const lastResignation = new Date("2023-01-05");
         const govStart = new Date("2022-03-30");
         const currentTime = new Date();
 
@@ -154,7 +156,7 @@
 </body>
 <footer>
     <hr>
-    © 2022 <a href="https://gil.omg.lol">Gil</a>. Todos os direitos reservados. <a href="https://github.com/GilOliveira/dias-sem-demissoes">Código aberto</a>.<br>
+    © 2022 <a href="https://gil.omg.lol">Gil</a>. Todos os direitos reservados. <br>
     O gestor deste sítio web não procede à recolha de dados pessoais.
 </footer>
 </html>
