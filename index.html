@@ -32,8 +32,18 @@
 <body>
 
     <main>
+        
         <div class="mainDiv">
-            <p>
+            
+            <noscript>
+                <article>⚠️ Para ver as contagens, o seu navegador necessita de ter o JavaScript ativo.</article>
+                <style>
+                    #mainCounter {display: none}
+                    #stats {display: none}
+                </style>
+            </noscript>
+            
+            <p id="mainCounter">
                 Estamos há<br>
                 <span id="counterTens" class="counter"></span>
                 <span id="counterUnit" class="counter"></span><br>
@@ -43,7 +53,7 @@
 
         <br>
 
-        <p>
+        <p id="stats">
             O governo tomou posse há <span id="daysOfGov"></span> dias.<br>
             Já pediram demissão <span id="peopleExited"></span> elementos.<br>
         </p>
